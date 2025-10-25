@@ -50,7 +50,7 @@ O sistema utiliza um banco de dados relacional (ex: MySQL, PostgreSQL ou SQLite)
 
 ---
 
-## 📥 2. Clonar o repositório
+## 📥 Clonar o repositório
 Clone o projeto em sua máquina:
 ```
 git clone https://github.com/<seu-usuario>/gestao-de-pedidos.git
