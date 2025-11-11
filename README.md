@@ -1,4 +1,4 @@
-# 🚀 Guia do Projeto — Sistema de Locadora de Veículos (Equipe)
+# 🚀 Guia do Projeto — Sistema de Locadora de Veículos
 Bem-vindo ao projeto da Locadora de Veículos!
 
 # 🧱 📂 Estrutura do Projeto
