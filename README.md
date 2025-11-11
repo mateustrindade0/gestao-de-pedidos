@@ -17,7 +17,7 @@ locadora-de-veiculos/
 ```
 
 # ⚙️ Como configurar o ambiente
-# 1️⃣ Instalar os programas necessários:
+# 🔗 1️⃣ Instalar os programas necessários:
 Java JDK 17+
 XAMPP (para o banco MySQL local)
 VS Code ou IntelliJ IDEA
@@ -77,20 +77,11 @@ O revisor do grupo vai verificar e aprovar.
 - Escreva mensagens claras nos commits
 - Combine com o grupo quem revisa e quem faz merge
 
-# 👥 Responsáveis por área
-Membro	Responsabilidade	Pasta principal
-Pessoa 1	Banco de dados e conexão JDBC	/database
-Pessoa 2	Clientes e Funcionários	/models, /dao, /services
-Pessoa 3	Veículos	/models, /dao, /services
-Pessoa 4	Reservas e Locações	/services, /dao
-Pessoa 5	Menus e Relatórios	/ui, /docs, /utils
-
 # ✅ Checklist inicial
 
- -Instalar Java e Git
+- Instalar Java e Git
 - Clonar repositório
 - Criar branch pessoal
-- Criar banco “locadora” no XAMPP
 - Rodar Main.java e testar conexão
 - Começar a implementar sua parte 🚀
 
