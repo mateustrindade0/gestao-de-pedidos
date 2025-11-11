@@ -1,59 +1,98 @@
-# 🛍️ Sistema de Gestão de Pedidos
+# 🚀 Guia do Projeto — Sistema de Locadora de Veículos (Equipe)
+Bem-vindo ao projeto da Locadora de Veículos!
 
-Este projeto foi desenvolvido como **Trabalho Final da disciplina de Programação Orientada a Objetos**, com o objetivo de aplicar na prática os principais conceitos da POO em Java, como **encapsulamento**, **herança**, **polimorfismo**, **tratamento de exceções**, **threads** e **integração com banco de dados** via **JDBC**.
-
----
-
-## 🎯 Objetivo do Sistema
-
-O sistema simula uma **pequena loja virtual** (ou estabelecimento similar) e permite realizar as operações básicas de **cadastro, listagem, atualização e remoção (CRUD)** de dados referentes a clientes, produtos e pedidos.
-
----
-
-## 🧩 Funcionalidades
-
-- 📋 Cadastro, listagem, atualização e exclusão de clientes, produtos e pedidos.  
-- 🛒 Associação de múltiplos produtos a um pedido.  
-- 💾 Integração com banco de dados relacional via **JDBC**.  
-- ⚙️ Tratamento de exceções (incluindo exceção personalizada).  
-- 🧠 Aplicação de **herança e polimorfismo** em entidades.  
-- ⏱️ Uso de **threads** para simulação de tarefas em paralelo (como logs e verificações automáticas).  
-- ✅ Interface simples em console para interação do usuário.
-
----
-
-## 🧮 Conceitos Aplicados
-### 🧱 Encapsulamento
-Todos os atributos das classes são **privados**, com métodos **getters** e **setters** para acesso controlado.  
-Há validação de dados (ex: preço não pode ser negativo).
-
-### 🧬 Herança
-A hierarquia de classes foi implementada, por exemplo:
-Funcionario → Vendedor → Gerente
-
-### 🔁 Polimorfismo
-Foi utilizado em:
-- Sobrescrita de métodos (`toString()`, `calcularComissao()`, etc.);
-- Uso de coleções genéricas (`List<Funcionario>`) que armazenam objetos de subclasses.
-
-### ⚠️ Exceções
-O projeto trata exceções comuns como:
-- `SQLException`
-- `NumberFormatException`
-- `NullPointerException`
-
-### 🧵 Threads
-As threads são usadas para simular tarefas em segundo plano, como geração de logs ou atualização de status de pedidos.
-
-### 🗄️ Banco de Dados
-O sistema utiliza um banco de dados relacional (ex: MySQL, PostgreSQL ou SQLite) conectado via JDBC.
-
----
-
-## 📥 Clonar o repositório
-Clone o projeto em sua máquina:
+# 🧱 📂 Estrutura do Projeto
 ```
-git clone https://github.com/<seu-usuario>/gestao-de-pedidos.git
-cd gestao-de-pedidos
+locadora-de-veiculos/
+├── src/
+│   ├── Main.java                → Início do sistema (menu principal)
+│   ├── models/                  → Classes de dados (Cliente, Veiculo, etc.)
+│   ├── dao/                     → Acesso ao banco (CRUD via JDBC)
+│   ├── services/                → Regras de negócio
+│   ├── ui/                      → Menus e interação via terminal
+│   ├── utils/                   → Funções auxiliares (datas, logs, validações)
+│   └── database/                → Conexão JDBC (MySQL XAMPP)
+├── database/                    → Scripts SQL para criar o banco
+└── libs/                        → Driver JDBC (mysql-connector)
 ```
 
+# ⚙️ Como configurar o ambiente
+# 1️⃣ Instalar os programas necessários:
+Java JDK 17+
+XAMPP (para o banco MySQL local)
+VS Code ou IntelliJ IDEA
+Git (https://git-scm.com/downloads)
+
+# 🧩 2️⃣ Clonar o repositório
+Abra o terminal e digite:
+```
+git clone https://github.com/SEU_USUARIO/locadora_project.git
+```
+Isso vai baixar o projeto na sua máquina.
+
+# 🧠 3️⃣ Criar uma branch pessoal
+Cada integrante deve trabalhar em sua própria branch:
+```
+git checkout -b nome-do-integrante
+```
+
+Exemplo:
+```
+git checkout -b mateus
+```
+
+# ✏️ 4️⃣ Fazer alterações
+Abra o projeto e edite os arquivos que você for responsável.
+Após salvar, adicione e envie as mudanças:
+
+```
+git add .
+git commit -m "mensagem explicando o que foi feito"
+git push origin nome-da-sua-branch
+```
+
+*💡 Exemplo:*
+```
+git commit -m "Adicionei classe Cliente e método listar()"
+git push origin mateus
+```
+
+# 🔁 5️⃣ Atualizar seu projeto (puxar novas alterações)
+Antes de continuar trabalhando:
+```
+git pull origin main
+```
+Isso mantém seu projeto sincronizado com o grupo.
+
+# 🤝 6️⃣ Criar um Pull Request
+Quando terminar sua parte:
+1. Vá no repositório no GitHub
+2. Clique em “Compare & pull request”
+3. Descreva o que fez e clique em “Create pull request”
+O revisor do grupo vai verificar e aprovar.
+
+# ⚠️ Dicas importantes
+- Nunca edite diretamente a branch main
+- Sempre puxe as alterações antes de editar
+- Escreva mensagens claras nos commits
+- Combine com o grupo quem revisa e quem faz merge
+
+# 👥 Responsáveis por área
+Membro	Responsabilidade	Pasta principal
+Pessoa 1	Banco de dados e conexão JDBC	/database
+Pessoa 2	Clientes e Funcionários	/models, /dao, /services
+Pessoa 3	Veículos	/models, /dao, /services
+Pessoa 4	Reservas e Locações	/services, /dao
+Pessoa 5	Menus e Relatórios	/ui, /docs, /utils
+
+# ✅ Checklist inicial
+
+ -Instalar Java e Git
+- Clonar repositório
+- Criar branch pessoal
+- Criar banco “locadora” no XAMPP
+- Rodar Main.java e testar conexão
+- Começar a implementar sua parte 🚀
+
+*🧠 Dica:* Se algo quebrar, peça ajuda antes de dar git push.
+Use git status para ver o que foi alterado.
