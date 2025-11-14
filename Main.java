@@ -37,6 +37,7 @@ public class Main {
 
             switch (opcao) {
                 case 1:
+                    MenuCliente MenuCliente = new MenuCliente();
                     MenuCliente.exibirMenu();
                     break;
             }

@@ -1,0 +1,26 @@
+DAO vem de Data Access Object.
+É um padrão de projeto (design pattern) usado para separar a lógica de acesso ao banco de dados da lógica de negócio.
+
+👉 Em resumo:
+As classes DAO cuidam de salvar, buscar, atualizar e deletar dados do banco (CRUD).
+As classes Service usam o DAO para aplicar as regras de negócio (validações, cálculos, etc).
+O código principal (Main ou menus) só conversa com os Services, nunca direto com o banco.
+
+🧱 Como ela se encaixa na estrutura
+locadora_project/
+└── src/
+    ├── models/       ← classes que representam os dados (Cliente, Veiculo, etc)
+    ├── dao/          ← classes que acessam o banco
+    ├── services/     ← regras de negócio
+    ├── ui/           ← menus de interação via terminal
+    └── database/     ← conexão JDBC (ConnectionFactory)
+
+🧩 O que vai dentro da pasta dao/
+
+Cada entidade (classe de modelo) terá uma classe DAO correspondente:
+
+
+ClienteDAO.java	| CRUD de clientes
+VeiculoDAO.java	| CRUD de veículos
+ReservaDAO.java	| CRUD de reservas
+LocacaoDAO.java	| CRUD de locações
