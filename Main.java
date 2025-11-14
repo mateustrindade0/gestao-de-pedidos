@@ -1,11 +1,11 @@
 
-import utils.Log;
-import utils.ReservaMonitor;
-
 import java.util.Scanner;
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
+import utils.Log;
+import utils.ReservaMonitor;
+import ui.MenuCliente;
 
 public class Main {
     public static void main(String[] args) {
@@ -36,8 +36,9 @@ public class Main {
             }
 
             switch (opcao) {
-                case 0 -> System.out.println("Encerrando sistema...");
-                default -> System.out.println("Função ainda não implementada.");
+                case 1:
+                    MenuCliente.exibirMenu();
+                    break;
             }
         }
 
