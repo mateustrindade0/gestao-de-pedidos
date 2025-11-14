@@ -1,8 +1,8 @@
 package utils;
 
 import java.io.FileWriter;
-import java.io.PrintWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.time.LocalDateTime;
 
 public class Log {
