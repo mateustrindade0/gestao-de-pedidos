@@ -1,0 +1,39 @@
+🧱 Pasta: models/ — Classes de Dados e Entidades do Sistema
+locadora_project/
+├── src/
+│   ├── models/                  → Representação das entidades do sistema (POJOs)
+│   │                              Cada classe corresponde a uma tabela do banco de dados MySQL.
+│   │                              São usadas para armazenar e transportar informações entre as camadas.
+│   │
+│   │                              Essas classes não possuem regras de negócio nem código SQL —
+│   │                              apenas atributos, construtores, getters/setters e o método toString().
+│   │
+│   │   ├── Cliente.java          → Representa um cliente da locadora
+│   │   ├── Veiculo.java          → Classe base para veículos (com herança e polimorfismo)
+│   │   ├── Carro.java            → Subclasse de Veiculo (possui atributos específicos)
+│   │   ├── Moto.java             → Subclasse de Veiculo
+│   │   ├── Reserva.java          → Representa uma reserva feita por um cliente
+│   │   ├── Locacao.java          → Representa uma locação ativa ou finalizada
+│   │   └── Funcionario.java      → (Opcional) Representa o funcionário que opera o sistema
+
+⚙️ Função geral da pasta models/
+
+A camada Model serve para representar os dados do sistema em forma de objetos Java.
+
+Cada model:
+Define os atributos que serão armazenados no banco (campos da tabela);
+Fornece métodos de acesso (get/set) para manipular os dados;
+Pode conter construtores para inicializar os objetos facilmente;
+Pode ter relacionamentos com outras classes (ex: uma Locação tem um Cliente e um Veículo);
+Implementa o método toString() para exibição legível no terminal.
+
+
+📦 Resumo da pasta models/
+Arquivo	Responsabilidade
+Cliente.java	Representa os clientes cadastrados
+Veiculo.java	Classe base dos veículos (marca, modelo, placa, valor, status)
+Carro.java	Subclasse de Veiculo, com atributos adicionais
+Moto.java	Subclasse de Veiculo, exemplo de herança
+Reserva.java	Representa uma reserva feita pelo cliente
+Locacao.java	Representa uma locação ativa ou concluída
+Funcionario.java	(Opcional) Representa quem opera o sistema
