@@ -1,9 +1,8 @@
 package services;
 
-import models.Cliente;
-import java.util.List;
-
 import dao.ClienteDAO;
+import java.util.List;
+import models.Cliente;
 
 public class ClienteService {
 
@@ -60,3 +59,19 @@ public class ClienteService {
 
 
 
+
+// ============ VALIDAÇÕES ===========
+
+    public boolean validarNome(String nome){
+        return nome != null && !nome.trim().isEmpty();
+    }
+
+    public boolean validarCPF(String cpf){
+        return cpf != null && cpf.matches("\\d{11}");   
+    }
+
+    public boolean validarTelefone(String telefone){
+        return telefone != null && telefone.matches("\\d{10,11}");
+    }
+
+}
