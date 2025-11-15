@@ -37,6 +37,7 @@ public class Main {
 
             switch (opcao) {
                 case 1:
+                    System.out.println("Selecionado Gerenciar Cliente.");
                     MenuCliente MenuCliente = new MenuCliente();
                     MenuCliente.exibirMenu();
                     break;

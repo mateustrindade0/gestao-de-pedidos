@@ -2,3 +2,8 @@
 2025-11-12T22:03:56.393420100 - Monitor executado — verificando reservas vencidas (exemplo)
 2025-11-12T22:04:56.395016200 - Monitor executado — verificando reservas vencidas (exemplo)
 2025-11-12T22:05:06.143174500 - Sistema encerrado.
+2025-11-14T16:14:56.393249400 - Sistema iniciado.
+2025-11-14T16:14:56.399251200 - Monitor executado â€” verificando reservas vencidas (exemplo)
+2025-11-14T16:18:07.527254400 - Sistema iniciado.
+2025-11-14T16:18:07.536288200 - Monitor executado â€” verificando reservas vencidas (exemplo)
+2025-11-14T16:18:25.910543300 - Sistema encerrado.
