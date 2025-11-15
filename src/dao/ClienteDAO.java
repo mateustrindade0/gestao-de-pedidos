@@ -56,18 +56,23 @@ public class ClienteDAO {
         }
     }
 
-    public void remover(String cpf) {
-        String sql = "DELETE FROM cliente WHERE cpf=?";
-        try (Connection conn = DatabaseConnection.getConnection();
-             PreparedStatement stmt = conn.prepareStatement(sql)) {
-            stmt.setString(1, cpf);
-            int rows = stmt.executeUpdate();
-            if (rows > 0)
-                System.out.println("Cliente removido!");
-            else
-                System.out.println("Cliente não encontrado.");
-        } catch (SQLException e) {
-            System.out.println("Erro ao remover cliente: " + e.getMessage());
+    public void remover(int id) {
+    String sql = "DELETE FROM cliente WHERE id = ?";
+    try (Connection conn = DatabaseConnection.getConnection();
+         PreparedStatement stmt = conn.prepareStatement(sql)) {
+
+        stmt.setInt(1, id);
+        int rows = stmt.executeUpdate();
+
+        if (rows > 0) {
+            System.out.println("Cliente removido com sucesso!");
+        } else {
+            System.out.println("Cliente não encontrado.");
         }
+
+    } catch (SQLException e) {
+        System.out.println("Erro ao remover: " + e.getMessage());
     }
+}
+
 }
