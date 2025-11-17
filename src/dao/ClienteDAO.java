@@ -1,16 +1,16 @@
 package dao;
 
+import database.ConnectionFactory;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import models.Cliente;
-import database.DatabaseConnection;
 
 public class ClienteDAO {
-
+ 
     public void inserir(Cliente cliente) {
         String sql = "INSERT INTO cliente (nome, cpf, telefone) VALUES (?, ?, ?)";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, cliente.getNome());
             stmt.setString(2, cliente.getCpf());
@@ -25,7 +25,7 @@ public class ClienteDAO {
     public List<Cliente> listar() {
         List<Cliente> lista = new ArrayList<>();
         String sql = "SELECT * FROM cliente";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = ConnectionFactory.getConnection();
              Statement stmt = conn.createStatement();
              ResultSet rs = stmt.executeQuery(sql)) {
             while (rs.next()) {
@@ -41,7 +41,7 @@ public class ClienteDAO {
 
     public void atualizar(String cpf, String nome, String telefone) {
         String sql = "UPDATE cliente SET nome=?, telefone=? WHERE cpf=?";
-        try (Connection conn = DatabaseConnection.getConnection();
+        try (Connection conn = ConnectionFactory.getConnection();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
             stmt.setString(1, nome);
             stmt.setString(2, telefone);
@@ -57,22 +57,22 @@ public class ClienteDAO {
     }
 
     public void remover(int id) {
-    String sql = "DELETE FROM cliente WHERE id = ?";
-    try (Connection conn = DatabaseConnection.getConnection();
-         PreparedStatement stmt = conn.prepareStatement(sql)) {
+        String sql = "DELETE FROM cliente WHERE id = ?";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-        stmt.setInt(1, id);
-        int rows = stmt.executeUpdate();
+            stmt.setInt(1, id);
+            int rows = stmt.executeUpdate();
 
-        if (rows > 0) {
-            System.out.println("Cliente removido com sucesso!");
-        } else {
-            System.out.println("Cliente não encontrado.");
+            if (rows > 0) {
+                System.out.println("Cliente removido com sucesso!");
+            } else {
+                System.out.println("Cliente não encontrado.");
+            }
+
+        } catch (SQLException e) {
+            System.out.println("Erro ao remover: " + e.getMessage());
         }
-
-    } catch (SQLException e) {
-        System.out.println("Erro ao remover: " + e.getMessage());
     }
-}
 
 }
