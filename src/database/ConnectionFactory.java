@@ -9,15 +9,24 @@ import java.nio.file.Paths;
 
 public class ConnectionFactory {
 
-    private static final String URL = "jdbc:sqlite:locadora.db";
-    private static final String SCHEMA_PATH = "src/database/schema.sql";
+    private static final String URL = "jdbc:sqlite:database/locadora.db";
+    private static final String SCHEMA_PATH = "src/database/schemas.sql";
 
     static {
         try {
+            // garante que a pasta onde o DB será criado exista
+            try {
+                Files.createDirectories(Paths.get("database"));
+            } catch (Exception ex) {
+                System.err.println("Não foi possível criar pasta 'database': " + ex.getMessage());
+                ex.printStackTrace();
+            }
+
             Class.forName("org.sqlite.JDBC");
             inicializarBanco();
         } catch (Exception e) {
             System.err.println("Erro ao inicializar banco: " + e.getMessage());
+            e.printStackTrace();
         }
     }
 
