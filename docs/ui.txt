@@ -1,0 +1,36 @@
+A pasta ui será responsável por toda a interação com o usuário — os menus, exibição de informações e leitura de entradas.
+Vamos ver tudo em detalhes 👇
+
+🖥️ O que é a pasta ui/
+
+ui significa User Interface (interface do usuário).
+No seu caso, ela não é visual (gráfica) — será uma interface de texto, usando menus e prompts no terminal.
+
+💡 Em resumo:
+A pasta ui/ contém todas as classes que exibem menus, capturam entradas e mostram mensagens no console.
+Nenhuma dessas classes fala direto com o banco de dados — elas chamam os Services, que chamam os DAOs.
+
+🧱 Como a ui/ se encaixa na arquitetura
+locadora_project/
+└── src/
+    ├── models/      ← classes de dados
+    ├── dao/         ← acesso ao banco
+    ├── services/    ← regras de negócio
+    ├── ui/          ← menus e interface de terminal
+    ├── utils/       ← threads, logs, etc
+    └── database/    ← conexão JDBC
+
+🧩 O que vai dentro da pasta ui/
+Arquivo	Função
+MenuPrincipal.java	Menu inicial que direciona para os outros módulos
+MenuClientes.java	Gerencia cadastro, edição e listagem de clientes
+MenuVeiculos.java	Gerencia veículos (carros e motos)
+MenuLocacoes.java	Cria e finaliza locações
+MenuReservas.java	Cria, lista e cancela reservas
+🧠 Como cada Menu funciona
+
+Cada menu:
+1. Mostra as opções possíveis no terminal.
+2. Lê a escolha do usuário com Scanner.
+3. Chama os métodos corretos do Service.
+4. Volta ao menu ou encerra.
