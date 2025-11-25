@@ -1,8 +1,0 @@
-# 🧠 Principais responsabilidades
-
- Classes auxiliares e funções reutilizáveis
-    │ Fornece métodos genéricos para formatação, logs, manipulação de datas, cálculos, validações e outros recursos de suporte ao sistema.
-    → Registro de logs e eventos do sistema (ex: grava erros e ações em arquivo .txt)
-    → Formatação de CPF, placa, valores monetários, etc.
-    → Métodos seguros para leitura de dados via terminal (Scanner)
-    → Validação de campos (CPF válido, telefone, data lógica)
